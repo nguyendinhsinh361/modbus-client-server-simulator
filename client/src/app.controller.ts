@@ -14,7 +14,6 @@ export class AppController {
     @Req() req: Request,
   ) {
     const client = connectModbusTcp('127.0.0.1', 502);
-    // console.log(client);
     req.app.set('modbusClient', client);
     res.json({ msg: client });
   }
